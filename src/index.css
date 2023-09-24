@@ -8,8 +8,9 @@
   padding: 0;
   box-sizing: border-box;
   font-family:Nexa-Trial-Bold;
-  background: rgb(74,74,190);
-background: linear-gradient(90deg, rgba(74,74,190,0.3) 9%, rgba(207,56,201,0.2) 80%, rgba(177,43,189,0.4) 100%, rgba(3,1,46,0.4) 100%);
+  /* background: rgb(74,74,190);
+  background-blend-mode: screen;
+  background : linear-gradient(90deg, rgba(74,74,190,0.3) 9%, rgba(207,56,201,0.2) 80%, rgba(177,43,189,0.4) 100%, rgba(3,1,46,0.4) 100%) */
 }
 
 .bg-img{

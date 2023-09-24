@@ -1,45 +1,40 @@
 import React from 'react'
-import bg from '../public/img/bg.jpg';
+import bg from './assets/bg.jpg';
 import Particles from 'react-tsparticles'
-import { useCallback } from "react";
-import { loadSlim } from "tsparticles-slim"; 
+import {
+    useCallback
+} from "react";
+import {
+    loadSlim
+} from "tsparticles-slim";
 import Particalss from './Components/Particalss';
+import TopBar from './Components/TopBar';
+import Hero from './Components/Hero';
 
 const App = () => {
-  const particlesInit = useCallback(async engine => {
-    console.log(engine);
-    // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
-    // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
-    // starting from v2 you can add only the features you need reducing the bundle size
-    //await loadFull(engine);
-    await loadSlim(engine);
-}, []);
-
-const particlesLoaded = useCallback(async container => {
-    await console.log(container);
-}, []);
-  const fetchedImgSrc = './img/bg.jpg';
 
 
-  var imgStyle = {
-  height: "100vh", width: "100%", objectFit: "cover",
-      opacity: "0.9"
-    
-  }
+    var imgStyle = {
+
+        height: "100vh",
+        width: "100%",
+        objectFit: "cover",
+        opacity: "0.9"
 
 
-  return (
+    }
 
-    <div className="relative  h-screen">
 
-      <div className="absoulte" >
-        <img src={bg} alt="" className=' object-center '  style={imgStyle}/>
-      </div>
-
-<Particalss/>
-      
-    </div>
-  )
+    return (
+     
+      <div className=" z-30 bg-site h-screen bg-no-repeat bg-cover opacity-100">
+      <div className="-z-20 h-screen bg-gradient-to-tr from-[rgba(10,21,143,0.3)] to-[rgba(143,15,116,0.9)] bg-blend-multiply">
+        <TopBar />
+           <Hero/>
+        <Particalss/>
+        </div>
+        </div>
+    )
 }
 
 export default App
