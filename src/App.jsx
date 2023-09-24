@@ -1,34 +1,44 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react'
+import bg from '../public/img/bg.jpg';
+import Particles from 'react-tsparticles'
+import { useCallback } from "react";
+import { loadSlim } from "tsparticles-slim"; 
+import Particalss from './Components/Particalss';
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = () => {
+  const particlesInit = useCallback(async engine => {
+    console.log(engine);
+    // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
+    // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
+    // starting from v2 you can add only the features you need reducing the bundle size
+    //await loadFull(engine);
+    await loadSlim(engine);
+}, []);
+
+const particlesLoaded = useCallback(async container => {
+    await console.log(container);
+}, []);
+  const fetchedImgSrc = './img/bg.jpg';
+
+
+  var imgStyle = {
+  height: "100vh", width: "100%", objectFit: "cover",
+      opacity: "0.9"
+    
+  }
+
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+
+    <div className="relative  h-screen">
+
+      <div className="absoulte" >
+        <img src={bg} alt="" className=' object-center '  style={imgStyle}/>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+
+<Particalss/>
+      
+    </div>
   )
 }
 
