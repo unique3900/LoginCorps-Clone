@@ -69,7 +69,7 @@ const Particalss = () => {
                     number: {
                         density: {
                             enable: true,
-                            area: 900,
+                            area: 1200,
                         },
                         value: 50,
                     },

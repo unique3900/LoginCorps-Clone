@@ -5,9 +5,9 @@ import { navData } from '../Data/navData';
 const Hero = () => {
     return (
 
-        <div className='translate-y-2/4 px-14 justify-center items-center lg:grid text-white  grid-flow-col gap-3 grid-cols-[1fr_3fr_1fr]'>
+        <div className='translate-y-2/4 px-14 justify-center items-center lg:grid text-white  grid-flow-col gap-3 grid-cols-[1fr_3fr_1fr] '>
             {/* Navigation Side */}
-            <div className="hidden lg:flex flex-col gap-4">
+            <div className="hidden  lg:flex flex-col gap-4">
 
                 {
                     navData.map((item, index) => (
@@ -15,7 +15,7 @@ const Hero = () => {
                         <div className="bg-gray-400 group-hover:bg-white p-2 rounded-full ">
                                 <AiFillHome className='text-black'/>
                         </div>
-                            <Link className='tracking-wider' to="/">{item.title }</Link>
+                            <Link className='tracking-wider text-md' to="/">{item.title }</Link>
                     </div>
                     ))
                 }
@@ -23,8 +23,8 @@ const Hero = () => {
                 
                
             </div>
-            <div className="flex flex-col justify-center items-center gap-4">
-                <h1 className='text-3xl font-bold -tracking-normal text-center'>"Let us make our future now and let us make our dreams a reality."
+            <div className="flex translate-y-2/4 flex-col justify-center items-center gap-4">
+                <h1 className='text-xl  lg:text-3xl font-bold -tracking-normal text-center'>"Let us make our future now and let us make our dreams a reality."
                 </h1>
                 <p className="text-2xl tracking-wide">-Welcome to Login</p>
             </div>
